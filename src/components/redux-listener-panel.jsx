@@ -32,13 +32,13 @@ class ReduxListenerPanel extends Component {
       'addon/redux-listener/actionTriggered', this.onActionTriggered
     );
 
-    // Clear the current notes on every story change.
+    // Clear the current action on every story change.
     this.stopListeningOnStory = api.onStory(() => {
       this.setState({ actions: [] });
     });
   }
 
-  // This is some cleanup tasks when the Notes panel is unmounting.
+  // This is some cleanup tasks when the actions panel is unmounting.
   componentWillUnmount() {
     if (this.stopListeningOnStory) {
       this.stopListeningOnStory();
