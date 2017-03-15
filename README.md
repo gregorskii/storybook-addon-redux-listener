@@ -43,6 +43,8 @@ const store = createStoreWithMiddleware(Reducers);
 On a Storybook config file wrap the component with a Provider decorator and the store.
 
 ```
+import store from 'store';
+
 stories.addDecorator(getStory => (
   <Provider store={store}>
     { getStory() }
