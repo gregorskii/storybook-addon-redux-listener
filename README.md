@@ -40,12 +40,21 @@ const store = createStoreWithMiddleware(Reducers);
 
 // Use store
 ```
+On a Storybook config file wrap the component with a Provider decorator and the store.
+
+```
+stories.addDecorator(getStory => (
+  <Provider store={store}>
+    { getStory() }
+  </Provider>
+));
+```
 
 To make this middleware load only when Storybook is active change you start script for Storybook in your `package.json`.
 
 ```
 "scripts": {
-	"storybook": "NODE_ENV=storybook start-storybook -p 9001",
+  "storybook": "NODE_ENV=storybook start-storybook -p 9001",
 }
 ```
 
