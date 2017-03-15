@@ -15,7 +15,7 @@ Then, configure it as an addon by adding it to your `addons.js` file (located in
 ```
 //  To get our default addons (actions and links)
 import '@kadira/storybook/addons';
-//  To add the knobs addon
+//  To add the Redux addon
 import 'storybook-addon-redux-listener/register'
 ```
 
