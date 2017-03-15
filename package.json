@@ -1,5 +1,5 @@
 {
-  "name": "redux-addon-redux-listener",
+  "name": "storybook-addon-redux-listener",
   "version": "0.1.0",
   "description": "Storybook addon for listening to Redux events. Events that are triggered show up in a new panel in Storybook.",
   "main": "index.js",
