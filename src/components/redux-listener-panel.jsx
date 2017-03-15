@@ -61,7 +61,7 @@ class ReduxListenerPanel extends Component {
   renderActions() {
     if (!this.state.actions.length) {
       return (
-        <div>Trigger some actions...</div>
+        <td />
       );
     }
 
