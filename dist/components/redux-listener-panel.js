@@ -94,7 +94,7 @@ var ReduxListenerPanel = function (_Component) {
     key: 'renderActions',
     value: function renderActions() {
       if (!this.state.actions.length) {
-        return _react2.default.createElement('td', null);
+        return _react2.default.createElement('tr', null);
       }
 
       return this.state.actions.map(function (action, index) {

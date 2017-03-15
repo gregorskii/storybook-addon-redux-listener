@@ -8,7 +8,7 @@ const styles = {
     fontSize: 14,
     color: '#444',
     width: '100%',
-    overflow: 'auto',
+    overflow: 'auto'
   }
 };
 
@@ -61,7 +61,7 @@ class ReduxListenerPanel extends Component {
   renderActions() {
     if (!this.state.actions.length) {
       return (
-        <td />
+        <tr />
       );
     }
 
