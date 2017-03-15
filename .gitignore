@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+
+# IntelliJ
+*.iml
+/.idea
+.DS_Store

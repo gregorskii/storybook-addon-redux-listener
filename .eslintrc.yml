@@ -1,0 +1,22 @@
+env:
+  browser: true
+  node: true
+  es6: true
+plugins:
+  - react
+parser: babel-eslint
+parserOptions:
+  sourceType: module
+extends:
+  - 'airbnb'
+rules:
+  comma-dangle: off
+  arrow-body-style: off
+  no-console: off
+  no-alert: off
+  import/extensions: off
+  import/no-unresolved: off
+  import/imports-first: off
+  import/newline-after-import: off
+  import/no-extraneous-dependencies: off
+  space-before-function-paren: off
