@@ -13,9 +13,9 @@ npm install storybook-addon-redux-listener --save-dev
 Then, configure it as an addon by adding it to your `addons.js` file (located in the Storybook config directory).
 
 ```
-//  To get our default addons (actions and links)
-import '@kadira/storybook/addons';
-//  To add the Redux addon
+//  Import addons you needed before (eg. actions and links)
+import '@storybook/addon-***/register';
+//  And also add new Redux addon
 import 'storybook-addon-redux-listener/register'
 ```
 
@@ -68,7 +68,7 @@ Setup a new listener and bind its events to the Storybook API channel:
 
 ```
 import listen from 'redux-listener-middleware';
-import addonAPI from '@kadira/storybook-addons';
+import addonAPI from '@storybook/addons';
 
 export default () => {
   const reduxListener = listen();
