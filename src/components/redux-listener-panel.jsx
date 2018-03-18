@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   reduxPanel: {
@@ -12,10 +13,15 @@ const styles = {
   }
 };
 
-class ReduxListenerPanel extends Component {
+class ReduxListenerPanel extends React.PureComponent {
   static propTypes = {
-    api: PropTypes.shape().isRequired,
-    channel: PropTypes.shape().isRequired
+    api: PropTypes.shape({
+      onStory: PropTypes.func.isRequired,
+    }).isRequired,
+    channel: PropTypes.shape({
+      on: PropTypes.func.isRequired,
+      removeListener: PropTypes.func.isRequired,
+    }).isRequired
   };
 
   constructor(...args) {

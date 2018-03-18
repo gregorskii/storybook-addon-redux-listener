@@ -1,5 +1,5 @@
 import listen from 'redux-listener-middleware';
-import addonAPI from '@kadira/storybook-addons';
+import addonAPI from '@storybook/addons';
 
 export default () => {
   const reduxListener = listen();

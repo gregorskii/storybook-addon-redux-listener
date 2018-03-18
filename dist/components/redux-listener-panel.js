@@ -10,6 +10,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -30,8 +34,8 @@ var styles = {
   }
 };
 
-var ReduxListenerPanel = function (_Component) {
-  _inherits(ReduxListenerPanel, _Component);
+var ReduxListenerPanel = function (_React$PureComponent) {
+  _inherits(ReduxListenerPanel, _React$PureComponent);
 
   function ReduxListenerPanel() {
     var _ref;
@@ -62,13 +66,13 @@ var ReduxListenerPanel = function (_Component) {
 
       channel.on('addon/redux-listener/actionTriggered', this.onActionTriggered);
 
-      // Clear the current notes on every story change.
+      // Clear the current action on every story change.
       this.stopListeningOnStory = api.onStory(function () {
         _this2.setState({ actions: [] });
       });
     }
 
-    // This is some cleanup tasks when the Notes panel is unmounting.
+    // This is some cleanup tasks when the actions panel is unmounting.
 
   }, {
     key: 'componentWillUnmount',
@@ -152,10 +156,15 @@ var ReduxListenerPanel = function (_Component) {
   }]);
 
   return ReduxListenerPanel;
-}(_react.Component);
+}(_react2.default.PureComponent);
 
 ReduxListenerPanel.propTypes = {
-  api: _react.PropTypes.shape().isRequired,
-  channel: _react.PropTypes.shape().isRequired
+  api: _propTypes2.default.shape({
+    onStory: _propTypes2.default.func.isRequired
+  }).isRequired,
+  channel: _propTypes2.default.shape({
+    on: _propTypes2.default.func.isRequired,
+    removeListener: _propTypes2.default.func.isRequired
+  }).isRequired
 };
 exports.default = ReduxListenerPanel;
